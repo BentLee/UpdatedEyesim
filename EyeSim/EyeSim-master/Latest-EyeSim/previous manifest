@@ -1,0 +1,32 @@
+{
+  "name": "EyeTrackSim",
+  "version": "1.0",
+  "description": "A developer tool for accessibility",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "notifications",
+    "background"
+  ],
+  "browser_action": {
+    "default_popup": "EyeSim.html"
+   },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"
+      ],
+      "js": ["EyeSim.js","js/jquery.min.js"]
+
+    }
+  ],
+  "background": {
+    "scripts": [
+      "EyeSim.js"
+    ],
+    "persistent": false
+  },
+  "manifest_version": 2
+
+}

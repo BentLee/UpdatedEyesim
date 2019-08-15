@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src='jquery-3.4.1.min.js'></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--
+Ready scripts:
+1. Jquery library version 3.4.1
+2. default
+3. Viewing dimensions settings
+4. Bootstrap refrence library??? - target for removal
+-->
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+/*
+overflow ???
+*/
+        #mousePos {
+            position: fixed;
+            top: 100px;
+            left: 100px;
+            height: 100px;
+            width: 100px;
+        }
+  /*
+  Initial div generation starting point before it syncs with cursor
+  */
+        #bluecircle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+        /*
+        circle within the div
+        */
+        img.center {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+        /*
+      Tobii toolbar image
+      */
+        * {
+            cursor: none;
+        }
+        .shake-animation {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+        }
+        /*
+        Tobii cursor saccades
+        */
+    </style>
+</head>
+
+<body>
+
+
+    <img src="tnb.png" class="center">
+
+    <div id ="mousePos">
+        <svg width="100%" height="100%" border="1px solid black" preserveAspectRatio="xMidYMin">
+            <circle cx="50%" cy="50%" r="40" fill="#0000ff99" id="bluecircle" />
+        </svg>
+    </div>
+    <!--
+    Creation of the div with the SVG cursor replacement inside
+  -->
+
+    <script src="content.js"> </script>
+<!--
+calls content.js
+-->
+
+</script>
+
+</body>
+
+</html>
